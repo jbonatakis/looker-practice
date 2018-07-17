@@ -50,6 +50,12 @@ view: order_items {
     sql:  SUM(${sale_price}) ;;
   }
 
+  measure: max_price {
+    type:  number
+    value_format_name: usd
+    sql: MAX(${sale_price}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
